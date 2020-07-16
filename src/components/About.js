@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
-import Bg from "./../assets/bg.jpg";
+import logo from './../assets/about.jpg'
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -11,20 +11,24 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "23px",
     },
   },
+  about:{
+    height:'500px',
+    [theme.breakpoints.down("md")]: {
+      height:'250px',
+    },
+  }
 }));
 
 export default function About() {
   const classes = useStyles();
-  return (
-
-    
+  return (    
     <Container
       maxWidth="xl"
       style={{ height: "100vh", backgroundColor: "#e4e4e4", display: "flex", alignItems: "center" }}
     >      
         <Grid container spacing={2} justify="center" >
           <Grid item md={5} lg={5} xl={5} className="logo">
-            <p style={{ padding: "50px", margin: "0" }}> </p>
+            <img src={logo} className={classes.about}/>
           </Grid>
           <Grid item md={7} lg={7} xl={7} className="logo">
             <p style={{ padding: "50px", margin: "0", textAlign: "center" }}>
